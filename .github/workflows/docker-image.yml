@@ -15,7 +15,8 @@ jobs:
 
       # Log in to Docker Hub
       - name: Log in to Docker Hub
-        run: docker login -u rg850 -p Rohit@850850
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
 
       # Build the Docker image
       - name: Build Docker image
