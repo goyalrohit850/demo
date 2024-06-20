@@ -19,8 +19,8 @@ jobs:
 
       # Build the Docker image
       - name: Build Docker image
-        run: docker build -t your-dockerhub-username/your-repo-name:latest .
+        run: docker build -t rg850/demo:latest .
 
       # Push the Docker image to Docker Hub
       - name: Push Docker image
-        run: docker push your-dockerhub-username/your-repo-name:latest
+        run: docker push rg850/demo:latest
