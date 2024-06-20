@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Print Secret Values
-        run: echo "DOCKER_PASSWORD:${{ secrets.DOCKER_PASSWORD }}"
           
       # Log in to Docker Hub
       - name: Log in to Docker Hub
@@ -23,8 +20,8 @@ jobs:
 
       # Build the Docker image
       - name: Build Docker image
-        run: docker build -t rg850/demo:latest .
+        run: docker build -t ${{ secrets.IMAGE_NAME }}:latest .
 
       # Push the Docker image to Docker Hub
       - name: Push Docker image
-        run: docker push rg850/demo:latest
+        run: docker push ${{ secrets.IMAGE_NAME }}:latest
