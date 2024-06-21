@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test
+spec:
+  destination:
+    name: ''
+    namespace: a
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm
+    repoURL: 'https://github.com/goyalrohit850/demo.git'
+    targetRevision: HEAD
+  sources: []
+  project: demo
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
